@@ -75,15 +75,7 @@
     }
 
     // ── Eventos de campos ──────────────────────────────────────
-    empInput.addEventListener('input', function () {
-        updateFlow();
-        // El TC21 envía Enter al terminar el scan; también manejamos input de longitud
-        // para saltar foco automáticamente si el código tiene longitud fija
-        if (this.value.trim().length > 0) {
-            setTimeout(() => orderInput.focus(), 60);
-        }
-    });
-
+    empInput.addEventListener('input', updateFlow);
     orderInput.addEventListener('input', updateFlow);
 
     // Salto de foco con Enter (comportamiento estándar de lectores Zebra)
