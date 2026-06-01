@@ -1,0 +1,111 @@
+@{
+    ViewData["Title"] = "Registro de tiempos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="app-shell">
+
+    <header class="app-header">
+        <div class="logo" aria-hidden="true"><span>SAP</span></div>
+        <h1>Registro de tiempos</h1>
+        <div class="conn-badge">
+            <div class="dot spin" id="conn-dot"></div>
+            <span id="conn-text">Conectando…</span>
+        </div>
+    </header>
+
+    <main class="app-body">
+
+        <div class="field-group">
+            <label class="field-label" for="inp-emp">
+                <span class="step-badge active" id="badge1">1</span>
+                Funcionario
+            </label>
+            <div class="field-input-wrap">
+                <input type="text"
+                       id="inp-emp"
+                       name="empId"
+                       placeholder="Escanee el carnet"
+                       autocomplete="off"
+                       autocorrect="off"
+                       spellcheck="false"
+                       inputmode="numeric" />
+                <svg class="field-check" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <circle cx="10" cy="10" r="9" stroke="#0a9e5e" stroke-width="1.5"/>
+                    <path d="M6 10l3 3 5-5" stroke="#0a9e5e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <span class="hint">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <rect x="3" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                    <rect x="14" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                    <rect x="3" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M14 14h2v2h-2zM18 14h3M14 18h2M18 18h3v3M18 21h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                Apunte el lector al código QR del carnet
+            </span>
+        </div>
+
+        <div class="field-group">
+            <label class="field-label" for="inp-order">
+                <span class="step-badge" id="badge2">2</span>
+                Orden de fabricación
+            </label>
+            <div class="field-input-wrap">
+                <input type="text"
+                       id="inp-order"
+                       name="docNum"
+                       placeholder="Escanee la orden"
+                       autocomplete="off"
+                       autocorrect="off"
+                       spellcheck="false"
+                       inputmode="numeric" />
+                <svg class="field-check" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <circle cx="10" cy="10" r="9" stroke="#0a9e5e" stroke-width="1.5"/>
+                    <path d="M6 10l3 3 5-5" stroke="#0a9e5e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <span class="hint">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <rect x="3" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                    <rect x="14" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                    <rect x="3" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.5"/>
+                    <path d="M14 14h2v2h-2zM18 14h3M14 18h2M18 18h3v3M18 21h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                Apunte el lector al código QR de la orden
+            </span>
+        </div>
+
+        <div class="status-card" id="status-card" role="status" aria-live="polite">
+            <svg class="status-icon" id="status-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <circle cx="10" cy="10" r="9" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M10 6v4.5M10 13.5v.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span id="status-text">Escanee el carnet del funcionario</span>
+        </div>
+
+        <div class="action-area">
+            <button class="btn-tag" id="btn-tag" disabled aria-label="Registrar tiempo en SAP">
+                <span id="tag-content">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    TAG
+                </span>
+            </button>
+            <button class="btn-clear" id="btn-clear" type="button">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Limpiar
+            </button>
+        </div>
+
+    </main>
+
+    <footer class="app-footer">
+        SAP Business One &middot; Módulo MRP &middot; v2.0
+    </footer>
+
+</div>
